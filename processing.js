@@ -19978,7 +19978,7 @@
     var scripts = document.body.getElementsByTagName('script');
     var s, source, instance;
     if (scripts.length > 0) {
-      var script = scripts[scripts.length - 1];
+      var script = scripts[0];
 
       if (canvas) {
         if (script.getAttribute("src")) {
