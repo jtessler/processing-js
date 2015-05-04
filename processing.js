@@ -19974,37 +19974,17 @@
       }
     }
 
-    // also process all <script>-indicated sketches, if there are any
+    // also process the *last* script tag.
     var scripts = document.getElementsByTagName('script');
     var s, source, instance;
-    for (s = 0; s < scripts.length; s++) {
-      var script = scripts[s];
-      if (!script.getAttribute) {
-        continue;
-      }
+    if (scripts.length > 0) {
+      var script = scripts[scripts.length - 1];
 
-      var type = script.getAttribute("type");
-      if (type && (type.toLowerCase() === "text/processing" || type.toLowerCase() === "application/processing")) {
-        var target = script.getAttribute("data-processing-target");
-        canvas = undef;
-        if (target) {
-          canvas = document.getElementById(target);
+      if (canvas) {
+        if (script.getAttribute("src")) {
+          filenames = script.getAttribute("src").split(/\s+/);
+          loadSketchFromSources(canvas, filenames);
         } else {
-          var nextSibling = script.nextSibling;
-          while (nextSibling && nextSibling.nodeType !== 1) {
-            nextSibling = nextSibling.nextSibling;
-          }
-          if (nextSibling.nodeName.toLowerCase() === "canvas") {
-            canvas = nextSibling;
-          }
-        }
-
-        if (canvas) {
-          if (script.getAttribute("src")) {
-            filenames = script.getAttribute("src").split(/\s+/);
-            loadSketchFromSources(canvas, filenames);
-            continue;
-          }
           source =  script.textContent || script.text;
           instance = new Processing(canvas, source);
         }
