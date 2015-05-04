@@ -19984,7 +19984,9 @@
         filenames = script.getAttribute("src").split(/\s+/);
         loadSketchFromSources(canvas[0], filenames);
       } else {
-        source =  script.textContent || script.text;
+        // Match Khan Academy's style.
+        source = "size(400, 400); background(0xFFF); ";
+        source += script.textContent || script.text;
         instance = new Processing(canvas[0], source);
       }
     }
