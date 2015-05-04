@@ -1,6 +1,6 @@
 /***
 
-    P R O C E S S I N G . J S - 63c9bbf
+    P R O C E S S I N G . J S - 73bec53
     a port of the Processing visualization language
 
     Processing.js is licensed under the MIT License, see LICENSE.
@@ -1136,7 +1136,7 @@
     p.frameCount = 0;
     p.width = 100;
     p.height = 100;
-    p.angleMode = "degress";
+    p.angleMode = "degrees";
     var PVector = p.PVector = function() {
       function PVector(x, y, z) {
         this.x = x || 0;
@@ -9908,7 +9908,7 @@
     return tinylogLite
   }();
   Processing.logger = tinylogLite;
-  Processing.version = "63c9bbf";
+  Processing.version = "73bec53";
   Processing.lib = {};
   Processing.registerLibrary = function(name, desc) {
     Processing.lib[name] = desc;
