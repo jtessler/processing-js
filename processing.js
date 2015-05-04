@@ -19974,20 +19974,18 @@
       }
     }
 
-    // also process the *first* body script tag.
+    // also process the *first* body script tag on the first canvas.
     var scripts = document.body.getElementsByTagName('script');
     var s, source, instance;
-    if (scripts.length > 0) {
+    if (canvas.length > 0 && scripts.length > 0) {
       var script = scripts[0];
 
-      if (canvas) {
-        if (script.getAttribute("src")) {
-          filenames = script.getAttribute("src").split(/\s+/);
-          loadSketchFromSources(canvas, filenames);
-        } else {
-          source =  script.textContent || script.text;
-          instance = new Processing(canvas, source);
-        }
+      if (script.getAttribute("src")) {
+        filenames = script.getAttribute("src").split(/\s+/);
+        loadSketchFromSources(canvas[0], filenames);
+      } else {
+        source =  script.textContent || script.text;
+        instance = new Processing(canvas[0], source);
       }
     }
   };
