@@ -1,6 +1,6 @@
 /***
 
-    P R O C E S S I N G . J S - 8196d14
+    P R O C E S S I N G . J S - 1d880ea
     a port of the Processing visualization language
 
     Processing.js is licensed under the MIT License, see LICENSE.
@@ -9908,7 +9908,7 @@
     return tinylogLite
   }();
   Processing.logger = tinylogLite;
-  Processing.version = "8196d14";
+  Processing.version = "1d880ea";
   Processing.lib = {};
   Processing.registerLibrary = function(name, desc) {
     Processing.lib[name] = desc;
@@ -10049,7 +10049,7 @@
     var scripts = document.body.getElementsByTagName("script");
     var s, source, instance;
     if (scripts.length > 0) {
-      var script = scripts[scripts.length - 1];
+      var script = scripts[0];
       if (canvas) if (script.getAttribute("src")) {
         filenames = script.getAttribute("src").split(/\s+/);
         loadSketchFromSources(canvas, filenames)
