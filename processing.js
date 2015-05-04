@@ -19974,8 +19974,8 @@
       }
     }
 
-    // also process the *last* script tag.
-    var scripts = document.getElementsByTagName('script');
+    // also process the *first* body script tag.
+    var scripts = document.body.getElementsByTagName('script');
     var s, source, instance;
     if (scripts.length > 0) {
       var script = scripts[scripts.length - 1];
