@@ -1807,7 +1807,7 @@
     p.height          = 100;
 
     // XXX(jeresig)
-    p.angleMode = "degress";
+    p.angleMode = "degrees";
 
     var PVector = p.PVector = (function() {
       function PVector(x, y, z) {
