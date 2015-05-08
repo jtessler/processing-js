@@ -18164,8 +18164,8 @@
       // Since frameRate() and frameRate are different things,
       // we need to differentiate them somehow. So when we parse
       // the Processing.js source, replace frameRate so it isn't
-      // confused with frameRate(), as well as keyPressed and mousePressed
-      s = s.replace(/\b(frameRate|keyPressed|mousePressed)\b(?!\s*"B)/g, "__$1");
+      // confused with frameRate()
+      s = s.replace(/\b(frameRate)\b(?!\s*"B)/g, "__$1");
       // "boolean", "byte", "int", etc. => "parseBoolean", "parseByte", "parseInt", etc.
       s = s.replace(/\b(boolean|byte|char|float|int)\s*"B/g, function(all, name) {
         return "parse" + name.substring(0, 1).toUpperCase() + name.substring(1) + "\"B";
