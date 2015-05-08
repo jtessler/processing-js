@@ -1,7 +1,7 @@
 
 Processing.js (for JSBin)
 =========================
-Yet another port of the Processing visualization language for use in jsbin.org.
+Yet another port of the Processing visualization language for use in jsbin.com.
 
 About Us
 --------
