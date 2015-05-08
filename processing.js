@@ -1,6 +1,6 @@
 /***
 
-    P R O C E S S I N G . J S - 583e14b
+    P R O C E S S I N G . J S - 0e9e0da
     a port of the Processing visualization language
 
     Processing.js is licensed under the MIT License, see LICENSE.
@@ -8692,7 +8692,7 @@
       });
       s = s.replace(/\b(\.?\d+\.?)[fF]\b/g, "$1");
       s = s.replace(/([^\s])%([^=\s])/g, "$1 % $2");
-      s = s.replace(/\b(frameRate|keyPressed|mousePressed)\b(?!\s*"B)/g, "__$1");
+      s = s.replace(/\b(frameRate)\b(?!\s*"B)/g, "__$1");
       s = s.replace(/\b(boolean|byte|char|float|int)\s*"B/g, function(all, name) {
         return "parse" + name.substring(0, 1).toUpperCase() + name.substring(1) + '"B'
       });
@@ -9908,7 +9908,7 @@
     return tinylogLite
   }();
   Processing.logger = tinylogLite;
-  Processing.version = "583e14b";
+  Processing.version = "0e9e0da";
   Processing.lib = {};
   Processing.registerLibrary = function(name, desc) {
     Processing.lib[name] = desc;
